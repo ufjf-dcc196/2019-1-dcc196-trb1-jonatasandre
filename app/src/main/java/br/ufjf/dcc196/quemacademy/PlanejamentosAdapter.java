@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -14,18 +15,18 @@ import java.util.List;
 
 class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.ViewHolder> {
 
-    private List<String> items;
-    private OnPalavraClickListener listener;
+    private List<Planejamento> items;
+    private OnItemClickListener listener;
 
-    public interface OnPalavraClickListener{
+    public interface OnItemClickListener{
         void onItemClick(View itemView, int position);
     }
 
-    public PlanejamentosAdapter(List<String> palavras) {
-        this.items = palavras;
+    public PlanejamentosAdapter(List<Planejamento> items) {
+        this.items = items;
     }
 
-    public void setOnPalavraClickListener(OnPalavraClickListener listener){
+    public void setOnPalavraClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
 
@@ -35,17 +36,21 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        //View linha = inflater.inflate(R.layout.palavra_layout,parent,false);
-        //ViewHolder vh = new ViewHolder(linha);
-        ViewHolder vh = null;
+        View linha = inflater.inflate(R.layout.planejamento_layout,parent,false);
+        ViewHolder vh = new ViewHolder(linha);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        String palavra = this.items.get(i);
-        viewHolder.txtPalavra.setText(palavra);
-        viewHolder.txtTamanho.setText((Integer.toString(palavra.length())));
+        Planejamento p = items.get(i);
+
+        viewHolder.txtAno.setText(String.valueOf(p.getAno()));
+        viewHolder.txtSemestre.setText(String.valueOf(p.getSemestre()));
+        viewHolder.txtLinguas.setText(String.valueOf(p.getLinguas()));
+        viewHolder.txtExatas.setText(String.valueOf(p.getExatas()));
+        viewHolder.txtSaude.setText(String.valueOf(p.getSaude()));
+        viewHolder.txtHumanidades.setText(String.valueOf(p.getHumanidades()));
     }
 
     @Override
@@ -53,13 +58,21 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
         return this.items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtPalavra;
-        public TextView txtTamanho;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        public TextView txtAno;
+        public TextView txtSemestre;
+        public TextView txtLinguas;
+        public TextView txtExatas;
+        public TextView txtSaude;
+        public TextView txtHumanidades;
         public ViewHolder(final View itemView) {
             super(itemView);
-            //txtPalavra = (TextView)itemView.findViewById(R.id.txtPalavra);
-            //txtTamanho = (TextView)itemView.findViewById(R.id.txtTamanho);
+            txtAno = itemView.findViewById(R.id.textAno);
+            txtSemestre = itemView.findViewById(R.id.textSemestre);
+            txtLinguas = itemView.findViewById(R.id.textLinguasInfo);
+            txtExatas = itemView.findViewById(R.id.textExatasInfo);
+            txtSaude = itemView.findViewById(R.id.textSaudeInfo);
+            txtHumanidades = itemView.findViewById(R.id.textHumanidadesInfo);
             itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
@@ -72,6 +85,14 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
                     }
                 }
             });
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            if(position !=RecyclerView.NO_POSITION){
+                listener.onItemClick(v, position);
+            }
         }
     }
 }
