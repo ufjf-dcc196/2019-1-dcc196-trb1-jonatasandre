@@ -20,6 +20,27 @@ public class Planejamento implements Parcelable {
         this.humanidades = humanidades;
     }
 
+    protected Planejamento(Parcel in) {
+        ano = in.readInt();
+        semestre = in.readInt();
+        linguas = in.readFloat();
+        exatas = in.readFloat();
+        saude = in.readFloat();
+        humanidades = in.readFloat();
+    }
+
+    public static final Creator<Planejamento> CREATOR = new Creator<Planejamento>() {
+        @Override
+        public Planejamento createFromParcel(Parcel in) {
+            return new Planejamento(in);
+        }
+
+        @Override
+        public Planejamento[] newArray(int size) {
+            return new Planejamento[size];
+        }
+    };
+
     public int getAno() {
         return ano;
     }
