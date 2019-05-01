@@ -26,7 +26,7 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
         this.items = items;
     }
 
-    public void setOnPalavraClickListener(OnItemClickListener listener){
+    public void setOnItemClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
 
