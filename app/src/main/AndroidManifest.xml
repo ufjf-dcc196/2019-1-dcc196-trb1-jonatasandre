@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlanejamentosActivity"></activity>
+        <activity android:name=".NovaDisciplinaCursadaActivity"></activity>
+        <activity android:name=".DetalhesPlanejamentoActivity" />
+        <activity android:name=".DisciplinasCursadasActivity" />
+        <activity android:name=".PlanejamentosActivity" />
         <activity android:name=".NovoPlanejamentoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
