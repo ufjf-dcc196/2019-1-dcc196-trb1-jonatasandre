@@ -68,6 +68,7 @@ public class PlanejamentosActivity extends AppCompatActivity {
             public void onItemClick(View itemView, int position) {
                 Intent intent = new Intent(PlanejamentosActivity.this, DisciplinasCursadasActivity.class);
                 intent.putExtra("planejamento", planejamentosList.get(position));
+                intent.putExtra("index", position);
 
                 startActivityForResult(intent, REQUEST_DISCIPLINAS);
             }
@@ -90,6 +91,11 @@ public class PlanejamentosActivity extends AppCompatActivity {
                     }
                     break;
                 case REQUEST_DISCIPLINAS:
+                    int t = data.getIntExtra("index", -1);
+                    if (t != -1) {
+                        planejamentosList.set(t, (Planejamento) data.getParcelableExtra("planejamento"));
+                        pAdapter.notifyDataSetChanged();
+                    }
                     break;
                 default:
                     break;

@@ -19,6 +19,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
     public static final int REQUEST_DETALHE_PLANEJAMENTO = 400;
     Planejamento planejamento;
     Intent retorno;
+    int index;
 
 
     DisciplinaAdapter dAdapter;
@@ -56,6 +57,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
 
         if (bundle != null) {
             planejamento = bundle.getParcelable("planejamento");
+            index = bundle.getInt("index");
             List<Disciplina> disciplinas = planejamento.getDisciplinas();
 
             dAdapter  = new DisciplinaAdapter(disciplinas);
@@ -67,6 +69,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
             }
 
             retorno = new Intent();
+            retorno.putExtra("index",index);
 
         } else {
             finish();
@@ -86,7 +89,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
                     dAdapter.notifyDataSetChanged();
                     break;
                 case REQUEST_DETALHE_PLANEJAMENTO:
-                    planejamento = data.getParcelableExtra("planejamento");
+                    planejamento = data.getParcelableExtra("planejamentoEditado");
                     retorno.putExtra("planejamento", planejamento);
                     setResult(RESULT_CANCELED, retorno);
                     dAdapter.notifyDataSetChanged();
