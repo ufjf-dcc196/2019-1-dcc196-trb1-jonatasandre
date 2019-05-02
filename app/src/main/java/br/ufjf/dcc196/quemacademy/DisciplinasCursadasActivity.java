@@ -55,7 +55,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
-            Planejamento planejamento = bundle.getParcelable("planejamento");
+            planejamento = bundle.getParcelable("planejamento");
             List<Disciplina> disciplinas = planejamento.getDisciplinas();
 
             dAdapter  = new DisciplinaAdapter(disciplinas);
