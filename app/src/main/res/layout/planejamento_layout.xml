@@ -71,7 +71,7 @@
             android:layout_span="2"
             android:gravity="center"
             android:padding="5dp"
-            android:text="%" />
+            android:text="% plan" />
 
 
         <TextView
@@ -97,6 +97,114 @@
 
         <TextView
             android:id="@+id/textHumanidadesInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/textPerCumprida"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="% cumprida" />
+
+        <TextView
+            android:id="@+id/textLinguasInfoCumprida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textExatasInfoCumprida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textSaudeInfoCumprida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textHumanidadesInfoCumprida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textSomaHH"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="soma HH" />
+
+        <TextView
+            android:id="@+id/textLinguasSumHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textExatasSumHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textSaudeSumHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textHumanidadesSumHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="0" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Total" />
+
+        <TextView
+            android:id="@+id/totalHoras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"

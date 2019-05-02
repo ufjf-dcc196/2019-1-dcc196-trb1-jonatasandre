@@ -41,6 +41,7 @@ public class PlanejamentosActivity extends AppCompatActivity {
         p2.addDisciplina(d8);
         planejamentosList.add(p);
         planejamentosList.add(p2);
+        p2.atualizaTotalHoras(true);
     }
 
     @Override

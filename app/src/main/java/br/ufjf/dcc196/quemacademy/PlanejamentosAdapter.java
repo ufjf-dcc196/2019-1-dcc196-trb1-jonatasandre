@@ -51,6 +51,18 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
         viewHolder.txtExatas.setText(String.valueOf(p.getExatas()));
         viewHolder.txtSaude.setText(String.valueOf(p.getSaude()));
         viewHolder.txtHumanidades.setText(String.valueOf(p.getHumanidades()));
+
+        viewHolder.txtLinguasCumprida.setText(String.valueOf(p.getPercLinguas()));
+        viewHolder.txtExatasCumprida.setText(String.valueOf(p.getPercExatas()));
+        viewHolder.txtSaudeCumprida.setText(String.valueOf(p.getPercSaude()));
+        viewHolder.txtHumanidadesCumprida.setText(String.valueOf(p.getPercHumanidades()));
+
+        viewHolder.txtLinguasSumHora.setText(String.valueOf(p.getTotalHorasLinguas()));
+        viewHolder.txtExatasSumHora.setText(String.valueOf(p.getTotalHorasExatas()));
+        viewHolder.txtSaudeSumHora.setText(String.valueOf(p.getTotalHorasSaude()));
+        viewHolder.txtHumanidadesSumHora.setText(String.valueOf(p.getTotalHorasHumanidades()));
+
+        viewHolder.txtTotalHoras.setText(String.valueOf(p.getTotalHoras()));
     }
 
     @Override
@@ -65,6 +77,18 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
         public TextView txtExatas;
         public TextView txtSaude;
         public TextView txtHumanidades;
+        public TextView txtTotalHoras;
+
+        public TextView txtLinguasCumprida;
+        public TextView txtExatasCumprida;
+        public TextView txtSaudeCumprida;
+        public TextView txtHumanidadesCumprida;
+
+
+        public TextView txtLinguasSumHora;
+        public TextView txtExatasSumHora;
+        public TextView txtSaudeSumHora;
+        public TextView txtHumanidadesSumHora;
         public ViewHolder(final View itemView) {
             super(itemView);
             txtAno = itemView.findViewById(R.id.textAno);
@@ -73,6 +97,15 @@ class PlanejamentosAdapter extends RecyclerView.Adapter<PlanejamentosAdapter.Vie
             txtExatas = itemView.findViewById(R.id.textExatasInfo);
             txtSaude = itemView.findViewById(R.id.textSaudeInfo);
             txtHumanidades = itemView.findViewById(R.id.textHumanidadesInfo);
+            txtLinguasCumprida = itemView.findViewById(R.id.textLinguasInfoCumprida);
+            txtExatasCumprida = itemView.findViewById(R.id.textExatasInfoCumprida);
+            txtSaudeCumprida = itemView.findViewById(R.id.textSaudeInfoCumprida);
+            txtHumanidadesCumprida = itemView.findViewById(R.id.textHumanidadesInfoCumprida);
+            txtLinguasSumHora= itemView.findViewById(R.id.textLinguasSumHora);
+            txtExatasSumHora = itemView.findViewById(R.id.textExatasSumHora);
+            txtSaudeSumHora = itemView.findViewById(R.id.textSaudeSumHora);
+            txtHumanidadesSumHora = itemView.findViewById(R.id.textHumanidadesSumHora);
+            txtTotalHoras = itemView.findViewById((R.id.totalHoras));
             itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
