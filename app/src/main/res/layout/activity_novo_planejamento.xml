@@ -1,185 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="7dp"
     tools:context=".NovoPlanejamentoActivity">
 
-    <TableRow
+    <TextView
+        android:id="@+id/tituloNovoPlanejamento"
+        style="@android:style/Widget.DeviceDefault.TextView.SpinnerItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Novo Planejamento"
+        android:textSize="30sp"
+        app:fontFamily="@font/chelsea_market"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
         android:layout_width="match_parent"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="435dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/txtNovoPlanejamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_span="2"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Novo Planejamento"
-            android:textSize="36sp" />
-
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/txtAnoNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Ano:" />
-
-        <EditText
-            android:id="@+id/editAnoNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="5dp" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/txtSemestreNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Semestre:" />
-
-        <EditText
-            android:id="@+id/editSemestreNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="5dp" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/txtLinguasNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Línguas:" />
-
-        <EditText
-            android:id="@+id/editLinguasNew"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:hint="0 %"
-            android:inputType="number"
-            android:padding="5dp" />
+            android:gravity="center">
 
-    </TableRow>
+            <TextView
+                android:id="@+id/txtAnoNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Ano:" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
+            <EditText
+                android:id="@+id/editAnoNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:inputType="number"
+                android:padding="5dp" />
 
-        <TextView
-            android:id="@+id/txtExatasNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Exatas:" />
+        </TableRow>
 
-        <EditText
-            android:id="@+id/editExatasNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:hint="0 %"
-            android:inputType="number"
-            android:padding="5dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center">
 
-    </TableRow>
+            <TextView
+                android:id="@+id/txtSemestreNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Semestre:" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
+            <EditText
+                android:id="@+id/editSemestreNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:inputType="number"
+                android:padding="5dp" />
 
-        <TextView
-            android:id="@+id/txtSaudeNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Saúde:" />
+        </TableRow>
 
-        <EditText
-            android:id="@+id/editSaudeNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:hint="0 %"
-            android:inputType="number"
-            android:padding="5dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center">
 
-    </TableRow>
+            <TextView
+                android:id="@+id/txtLinguasNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Línguas:" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center">
+            <EditText
+                android:id="@+id/editLinguasNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:hint="0 %"
+                android:inputType="number"
+                android:padding="5dp" />
 
-        <TextView
-            android:id="@+id/txtHumanidadesNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:padding="5dp"
-            android:text="Humanidades:" />
+        </TableRow>
 
-        <EditText
-            android:id="@+id/editHumanidadesNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:ems="10"
-            android:hint="0 %"
-            android:inputType="number"
-            android:padding="5dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center">
 
-    </TableRow>
+            <TextView
+                android:id="@+id/txtExatasNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Exatas:" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:padding="10dp">
+            <EditText
+                android:id="@+id/editExatasNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:hint="0 %"
+                android:inputType="number"
+                android:padding="5dp" />
 
-        <Button
-            android:id="@+id/btnSaveNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
-            android:text="Salvar" />
+        </TableRow>
 
-    </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center">
 
-</TableLayout>
+            <TextView
+                android:id="@+id/txtSaudeNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Saúde:" />
+
+            <EditText
+                android:id="@+id/editSaudeNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:hint="0 %"
+                android:inputType="number"
+                android:padding="5dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtHumanidadesNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:padding="5dp"
+                android:text="Humanidades:" />
+
+            <EditText
+                android:id="@+id/editHumanidadesNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:ems="10"
+                android:hint="0 %"
+                android:inputType="number"
+                android:padding="5dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnSaveNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Salvar" />
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
