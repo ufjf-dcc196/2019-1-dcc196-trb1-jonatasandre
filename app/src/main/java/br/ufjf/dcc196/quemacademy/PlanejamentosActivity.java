@@ -66,6 +66,10 @@ public class PlanejamentosActivity extends AppCompatActivity {
         pAdapter.setOnItemClickListener(new PlanejamentosAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
+                Intent intent = new Intent(PlanejamentosActivity.this, DisciplinasCursadasActivity.class);
+                intent.putExtra("planejamento", planejamentosList.get(position));
+
+                startActivityForResult(intent, REQUEST_DISCIPLINAS);
             }
         });
         rv.setAdapter(pAdapter);
@@ -84,6 +88,8 @@ public class PlanejamentosActivity extends AppCompatActivity {
                         planejamentosList.add((Planejamento) data.getParcelableExtra("novoPlanejamento"));
                         pAdapter.notifyDataSetChanged();
                     }
+                    break;
+                case REQUEST_DISCIPLINAS:
                     break;
                 default:
                     break;
