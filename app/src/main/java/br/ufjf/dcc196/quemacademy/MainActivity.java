@@ -12,15 +12,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-	private List<String> palavras = new ArrayList<String>(){{
-        add("Um");
-        add("Segundo");
-        add("Três");
-        add("Quatro");
-        add("Quatroaaa");
-
-    }};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +24,6 @@ public class MainActivity extends AppCompatActivity {
                                     Intent intent = new Intent(MainActivity.this, PlanejamentosActivity.class);
                                     startActivity(intent);
                                 }
-                            },5000);
+                            },1500);
     }
 }
